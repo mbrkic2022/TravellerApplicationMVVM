@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravellerAppPart1.MainPage">
+    <ContentPage.Resources>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="Center">
+        <Image x:Name="iconImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand" HeightRequest="150"/>
+        <Entry x:Name="userEntry" 
+               Margin="15" 
+               TextColor="Black" 
+               Placeholder="Email"
+               Keyboard="Email"/>
+        <Entry x:Name="passEntry"
+               Margin="15"
+               TextColor="Black"
+               Placeholder="Password"
+               IsPassword="True"/>
+        <Button x:Name="loginButton" 
+                Text="Login"
+                Style="{StaticResource normalButton}"
+                Clicked="loginButton_Clicked"/>
+    </StackLayout>
+</ContentPage>

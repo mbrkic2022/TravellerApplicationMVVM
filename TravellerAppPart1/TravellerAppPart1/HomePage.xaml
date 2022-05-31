@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:TravellerAppPart1"
+            xmlns:vm="clr-namespace:TravellerAppPart1.ViewModel"
+             x:Class="TravellerAppPart1.HomePage">
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <vm:HomeVM x:Key="vm"/>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+    <local:HistoryPage Title="History"/>
+    <local:MapPage Title="Map"/>
+    <local:ProfilePage Title="Profile"/>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Add" IconImageSource="add.png" Command="{Binding Source={StaticResource vm}, Path=NewTravelCommand}"/>
+    </TabbedPage.ToolbarItems>
+</TabbedPage>

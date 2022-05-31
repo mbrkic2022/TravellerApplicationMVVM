@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TravellerAppPart1.ViewModel"
+             x:Class="TravellerAppPart1.PostDetailPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:PostDetailVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="experienceEntry"/>
+            <Button x:Name="deleteButton" Text="Delete" Command="{Binding Source={StaticResource vm}, Path=DeleteCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

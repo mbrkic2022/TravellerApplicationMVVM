@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TravellerAppPart1.ViewModel"
+             x:Class="TravellerAppPart1.ProfilePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:ProfileVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource vm}">
+            <!--Binding PostCount umjesto crtica-->
+            <Label x:Name="postCountLabel"
+                   TextColor="DodgerBlue"  
+                   HorizontalOptions="Center" 
+                   Text="{Binding PostCount}" 
+                   FontAttributes="Bold"/>
+            <Label Text="posts" 
+                   HorizontalOptions="Center"
+                   TextColor="LightGray"/>
+            <ListView x:Name="countriesListView" ItemsSource="{Binding Categories}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- name i count umjesto key i value-->
+                        <TextCell Text="{Binding Path=Name}"  
+                                  Detail="{Binding Path=Count}"> 
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
